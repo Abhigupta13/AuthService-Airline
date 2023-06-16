@@ -4,3 +4,5 @@ WebOTP
 Sequelize Validations & Constraints
     - https://sequelize.org/docs/v6/core-concepts/validations-and-constrain
 
+sequelize hooks / triggers
+    -https://sequelize.org/docs/v6/other-topics/hooks/

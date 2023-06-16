@@ -1,9 +1,8 @@
-const { UserRepository } = require('../repository/user-repository');
-
+const UserRepository = require('../repository/user-repository');
 
 class UserService {
     constructor(){
-        const userRepository = new UserRepository();
+        this.userRepository = new UserRepository();
     }
     async create(data){
         try {
@@ -28,3 +27,4 @@ class UserService {
         }
     }
 }
+module.exports = UserService;

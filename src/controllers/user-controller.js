@@ -1,4 +1,4 @@
-const {UserService} = require('../service/user-service');
+const UserService = require('../service/user-service');
 
 const userService = new UserService();
 
@@ -18,10 +18,10 @@ const create = async (req, res) => {
     } catch (error) {
         // console.log(error);
         return res.status(500).json({
-            message: error.message,
+            message: "not able to create an user",
             data: {},
             success: false,
-            err: error.explanation
+            err: {}
         });
     }
 }

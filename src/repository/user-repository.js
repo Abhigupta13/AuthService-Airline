@@ -8,7 +8,7 @@ async create(data){
         return user;
     } catch (error) {
         console.log("Something went wrong on user-repository layer");
-        throw{error}
+        throw {error}
     }
 }
 async delete(userId){
@@ -21,7 +21,7 @@ async delete(userId){
         return true;
     } catch (error) {
         console.log("Something went wrong on user-repository layer");
-        throw{error}
+        throw {error}
     }
 }
      
