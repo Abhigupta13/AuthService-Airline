@@ -24,6 +24,18 @@ async delete(userId){
         throw {error}
     }
 }
+async getById (userId){
+    try {
+        const user = await User.fingByPk(userId, {
+            attribute: ['email','id']
+        });
+        return user;
+    } catch (error) {
+        console.log("Something went wrong on user-repository layer");
+        throw {error}
+    }
+}
+
      
 }
 
