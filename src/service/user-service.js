@@ -1,0 +1,30 @@
+const { UserRepository } = require('../repository/user-repository');
+
+
+class UserService {
+    constructor(){
+        const userRepository = new UserRepository();
+    }
+    async create(data){
+        try {
+            const user = await this.userRepository.create(data);
+            return user;
+        } catch (error) {
+            console.log("Something went wrong on user-service layer");
+            throw{error}
+        }
+    }
+    async delete(userId){
+        try {
+            await this.userRepository.delete({
+                where:{
+                    id: userId,
+                }
+            });
+            return true;
+        } catch (error) {
+            console.log("Something went wrong on user-service layer");
+            throw{error}
+        }
+    }
+}
