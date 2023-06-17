@@ -1,4 +1,4 @@
-## Authentication and Authorisation Service for Airline Booking service Project
+## Authentication and Authorization Service for Airline Booking service Project
 
 WebOTP
     - https://developer.mozilla.org/en-US/docs/Web/API/WebOTP_API
