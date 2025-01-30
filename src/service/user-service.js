@@ -106,6 +106,14 @@ class UserService {
             throw error;
         }
     }
+    assignRole(userId,roleId) {
+        try {
+            return this.userRepository.assignRole(userId,roleId);
+        } catch (error) {
+            console.log("Something went wrong in service layer");
+            throw error;
+        }
+    }
 }
 
 module.exports = UserService;

@@ -84,10 +84,30 @@ const isAdmin = async(req, res) => {
         });
     }
 }
+const assignRole = async(req, res) => {
+    try {
+        const response = await userService.assignRole(req.body.userId,req.body.roleId);
+        return res.status(200).json({
+            data: response,
+            err: {},
+            success: true,
+            message: 'Successfully assigned the role to the User'
+        })
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            message: 'either user or role is incorrect',
+            data: {},
+            success: false,
+            err: error
+        });
+    }
+}
 
 module.exports = {
     create,
     signIn,
     isAuthenticated,
-    isAdmin
+    isAdmin,
+    assignRole
 }

@@ -46,3 +46,4 @@ User.beforeCreate((user)=>{
 
   return User;
 };
+

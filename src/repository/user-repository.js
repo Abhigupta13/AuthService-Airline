@@ -75,6 +75,24 @@ async isAdmin(userId) {
     }
 }
 
+async assignRole(userId, roleId) {
+    try {
+        const user = await User.findByPk(userId);
+        const role = await Role.findByPk(roleId);
+
+        if (!user || !role) {
+            throw new Error("User or Role not found");
+        }
+
+        await user.addRole(role); // Sequelize automatically inserts into 'User_Roles'
+
+        console.log(`Role ${role.name} assigned to user ${user.email}`);
+    } catch (error) {
+        console.error("Error assigning role:", error);
+    }
+}
+
+
      
 }
 
